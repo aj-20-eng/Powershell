@@ -1,0 +1,7 @@
+You can use the Get-Process cmdlet in PowerShell to determine the CPU usage of each process on your computer. You can then sort the results by CPU usage to determine which process is using the most CPU resources. Here's an example of how you can do this:
+
+Open PowerShell as an administrator
+Type the following command:
+
+
+Get-Process | Select-Object -Property ProcessName, CPU | Sort-Object -Property CPU -Descending

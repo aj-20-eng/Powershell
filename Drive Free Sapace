@@ -1,0 +1,7 @@
+#If you want to see what is free space in your C drive Use below script
+
+$Drive = Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='C:'"
+$FreeSpace = [math]::Round(($Drive.FreeSpace/1GB),2)
+$TotalSpace = [math]::Round(($Drive.Size/1GB),2)
+$PercentFree = [Math]::Round(($FreeSpace/$TotalSpace)*100,2)
+"C Drive Free Space: $FreeSpace GB out of $TotalSpace GB ($PercentFree%)"
